@@ -1,0 +1,2 @@
+127.0.0.1   {{fqdn}} localhost
+::1         {{fqdn}} localhost

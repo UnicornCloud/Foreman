@@ -1,0 +1,3 @@
+---
+mkdir -p ~/tmp
+sudo mount -o bind ~/tmp /tmp/

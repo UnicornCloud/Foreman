@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+my_password='unicorninc'  # Set from user's uni.net!
+
+# root password for provisioned nodes!
+setting(){
+  hammer settings set --name 'root_pass' --value "$my_password"
+
+  touch /etc/foreman/uni/log/global_setting
+}
+
+setting

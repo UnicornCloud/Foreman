@@ -1,0 +1,7 @@
+---
+# This fix is Temporary! It should be set when Installing!
+- name: Temporary fix: DNS in DHCP
+  lineinfile:
+    path: /etc/dhcp/dhcpd.conf
+    regexp: '^option domain-name-servers *;'
+    line: 'option domain-name-servers {{default_ipv4}}, 8.8.8.8;'

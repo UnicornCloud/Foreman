@@ -1,0 +1,6 @@
+---
+- name: install foreman
+  shell: foreman-template
+  become: yes
+  args:
+    creates: /usr/sbin/foreman-rake

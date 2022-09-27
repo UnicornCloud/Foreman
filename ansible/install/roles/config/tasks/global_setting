@@ -1,0 +1,5 @@
+---
+- name: global_setting
+  script: global_setting
+  args:
+    creates: '{{log}}global_setting'

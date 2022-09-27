@@ -1,0 +1,5 @@
+---
+- name: hostgroup
+  script: '{{hostgroup}}'
+  args:
+    creates: '{{log}}{{hostgroup}}'

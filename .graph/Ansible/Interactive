@@ -1,0 +1,9 @@
+# In addition to Go, we can use `pause`!
+
+https://www.google.com/search?q=ansible+pause
+
+https://docs.ansible.com/ansible/latest/modules/pause_module.html
+
+https://stackoverflow.com/questions/34188167/ansible-print-message-debug-msg-line1-n-var2-n-line3-with-var3
+
+https://code-maven.com/waiting-with-ansible-pausing-playbook

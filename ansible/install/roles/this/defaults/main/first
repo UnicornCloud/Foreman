@@ -1,0 +1,5 @@
+---
+log: '/etc/foreman/uni/log/'
+os: 'Debian'
+ver: '9'
+hostgroup: 'hostgroup'

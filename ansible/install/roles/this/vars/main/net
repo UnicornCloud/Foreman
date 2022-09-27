@@ -1,0 +1,15 @@
+---
+interface: 'eth0'
+default_ipv4: '{{ansible_default_ipv4.address}}'
+
+domain: metal.ai
+fqdn: 'foreman.{{domain}}'
+
+
+# www.middlewareinventory.com/blog/ansible-get-ip-address/
+
+
+# all
+# {{ansible_default_ipv4.address}}
+# {{ansible_eth0.ipv4.address}}
+# {{ansible_enp1s0.ipv4.address}}

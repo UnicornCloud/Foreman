@@ -1,0 +1,12 @@
+---
+- import_tasks: .pre/log
+# May be out of order!
+- import_tasks: domain
+- import_tasks: subnet
+#
+- import_tasks: os
+  vars:
+    os: CentOS
+    ver: 8
+- import_tasks: hostgroup
+- import_tasks: global_setting

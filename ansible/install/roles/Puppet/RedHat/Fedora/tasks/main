@@ -1,0 +1,15 @@
+---
+- name: Puppet
+  dnf:
+    name:
+    - puppet.noarch
+    - puppet-agent
+    state: present
+  become: true
+
+
+
+# https://linux-packages.com/fedora-36/package/puppetnoarch
+
+# Old:
+# https://puppet.com/docs/puppet/7/install_puppet.html

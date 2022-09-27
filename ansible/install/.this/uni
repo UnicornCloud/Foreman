@@ -1,0 +1,24 @@
+---
+- hosts: this
+  gather_facts: yes
+  # pre_tasks:
+  # # Add your user repo here!
+  # - import_role: my
+  roles:
+  - role: this
+
+  - role: example
+
+  # - role: net
+
+  - role: get Foreman installer
+    # tags: init, never
+
+  # - role: install Foreman
+  #   tags: init, never
+  #
+  # - role: config
+  #   tags: c, never
+
+
+# First run: 'ansible-playbook uni.yml --tags init'

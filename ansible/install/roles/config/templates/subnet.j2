@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+dns='{{default_ipv4}}'
+
+create(){
+hammer subnet create \
+--name 'local' \
+--description 'home network' \
+--network-type 'IPv4' \
+--network '10.0.0.0' \
+--prefix '24' \
+--mask '255.255.255.0' \
+--gateway '10.0.0.1' \
+--dns-primary "$dns" \
+--dns-secondary '8.8.8.8' \
+--discovery-id '1' \
+--httpboot-id '1' \
+--dns 'foreman.metal.ai' \
+--tftp 'foreman.metal.ai' \
+--dhcp 'foreman.metal.ai' \
+--ipam 'DHCP' \
+--from '10.0.0.100' \
+--to '10.0.0.200' \
+--mtu 1500 \
+--boot-mode 'DHCP' \
+--domains 'metal.ai' \
+--location-title 'Default Location' \
+--organization-title 'Default Organization'
+
+touch /etc/foreman/uni/log/subnet
+}
+
+create

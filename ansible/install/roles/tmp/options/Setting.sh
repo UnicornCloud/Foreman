@@ -1,0 +1,2 @@
+--foreman-initial-location
+--foreman-initial-organization

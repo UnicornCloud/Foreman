@@ -1,0 +1,15 @@
+---
+- name: Foreman repositories
+  dnf:
+    name: https://yum.theforeman.org/releases/3.3/el8/x86_64/foreman-release.rpm
+    state: present
+    disable_gpg_check: true
+  become: true
+
+- name: Downloading the installer
+  dnf:
+    name: foreman-installer
+    state: latest
+  become: true
+
+# from: https://theforeman.org/manuals/nightly/index.html#2.Quickstart

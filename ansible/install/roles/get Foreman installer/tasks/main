@@ -1,0 +1,4 @@
+---
+
+- include_role:
+    name: 'get Foreman installer/{{ ansible_os_family }}/{{ ansible_distribution }}'

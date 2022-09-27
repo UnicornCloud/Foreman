@@ -1,0 +1,4 @@
+---
+- file:
+    path: '{{log}}'
+    state: directory

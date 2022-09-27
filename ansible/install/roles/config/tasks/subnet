@@ -1,0 +1,12 @@
+---
+- name: generate network
+  template:
+    src: subnet.j2
+    dest: /tmp/subnet
+    force: yes
+  delegate_to: 127.0.0.1
+
+- name: subnet
+  script: /tmp/subnet
+  args:
+    creates: '{{log}}subnet'

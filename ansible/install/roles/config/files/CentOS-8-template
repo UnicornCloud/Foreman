@@ -1,0 +1,37 @@
+#!/usr/bin/bash
+# Make this a Go script using foreman-API!
+
+os='CentOS'
+ver=8
+
+
+# template
+provisioning='Kickstart default'
+finish='Kickstart default finish'
+pxegrub='Kickstart default PXEGrub'
+pxegrub2='Kickstart default PXEGrub2'
+pxelinux='Kickstart default PXELinux'
+userdata='Kickstart default user data'
+
+
+set_template(){
+  # set()
+  title="$os $ver" # works when literal: 'CentOS 8'
+  os_id=$(hammer os info --title "$title" --fields Id | sed 's/Id://')
+
+  # 2 Associate with os
+  hammer os add-provisioning-template --title "$title" --provisioning-templates \
+  "$provisioning,$finish,$pxegrub,$pxegrub2,$pxelinux,$userdata"
+
+  # 3 Add template
+  for TEMPL in "$provisioning" "$finish" "$pxegrub" "$pxegrub2" "$pxelinux" "$userdata"
+  do
+    echo $TEMPL
+    templ_id=$(hammer template info --name "$TEMPL" --fields Id | sed 's/Id://')
+    hammer os set-default-template --id $os_id --provisioning-template-id $templ_id
+  done
+
+  touch /etc/foreman/uni/log/$os-$ver-template
+}
+
+set_template

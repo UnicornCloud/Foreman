@@ -1,0 +1,3 @@
+---
+- include_role:
+    name: 'Puppet/{{ ansible_os_family }}/{{ ansible_distribution }}'

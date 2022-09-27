@@ -1,0 +1,9 @@
+---
+- name: foreman install template
+  template:
+    src: '{{foreman_template}}'
+    dest: /usr/local/sbin/foreman-template
+    force: yes
+    mode: u+x
+    owner: root
+  become: yes

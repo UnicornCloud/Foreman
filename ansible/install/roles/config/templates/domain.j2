@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+create(){
+hammer domain create \
+--name '{{domain}}' \
+--description 'local network' \
+--dns-id '1' \
+--location 'Default Location' \
+--organization 'Default Organization'
+
+touch /etc/foreman/uni/log/domain
+}
+
+create

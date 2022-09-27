@@ -1,0 +1,17 @@
+---
+- name: Needed to fix # serverfault.com/questions/978212/ansible-retrieve-ip-address-for-a-given-network-interface-via-variables
+  setup:
+    gather_subset:
+      - network
+
+- name: set hostname
+  ansible.builtin.command: 'hostnamectl set-hostname {{fqdn}}'
+  become: yes
+
+- name: hosts file
+  template:
+    src: hosts
+    dest: /etc/hosts
+    force: yes
+    owner: root
+  become: yes

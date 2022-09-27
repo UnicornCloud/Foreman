@@ -1,0 +1,12 @@
+---
+- name: 'os'
+  script: '{{os}}-{{ver}}-os'
+  args:
+    creates: '{{log}}{{os}}-{{ver}}-os'
+
+- name: 'template'
+  script: '{{os}}-{{ver}}-template'
+  args:
+    creates: '{{log}}{{os}}-{{ver}}-template'
+  notify:
+    - build Template

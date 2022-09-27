@@ -1,0 +1,9 @@
+# ansible Dictionaries:
+I'm not using currently, but save for future!
+- www.mydailytutorials.com/the-basics-of-ansible-variables/
+- medium.com/@jmarhee/iterating-dictionaries-with-ansible-roles-af8b2f7d93f5
+- everythingshouldbevirtual.com/automation/ansible-defining-variables-as-dictionaries/
+
+
+## register Dictionary
+- www.big-bubbles.fluff.org/blogs/bubbles/blog/2016/10/07/ansible-multiple-values-in-a-registered-variable/

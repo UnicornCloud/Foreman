@@ -1,0 +1,8 @@
+---
+- name: enable discovery, via Hammer && Template
+  shell: |
+    hammer settings set --name default_pxe_item_global --value discovery
+  args:
+    creates: /var/lib/tftpboot/pxelinux.cfg/default
+  notify:
+    - build Template

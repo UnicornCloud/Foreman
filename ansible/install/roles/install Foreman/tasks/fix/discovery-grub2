@@ -1,0 +1,12 @@
+---
+# must run after Foreman-install
+
+- name: downgrade grub2 efi
+  get_url:
+    url: 'http://people.redhat.com/~lzapleta/grub/grub2-efi-x64-2.02-0.81.el7.x86_64/grubx64.efi'
+    dest: /var/lib/tftpboot/grub2/grubx64.efi
+    force: yes
+    # mode: 0644
+  become: yes
+
+# Solution: community.theforeman.org/t/cannot-boot-anymore-discovery-image/19998/7

@@ -1,0 +1,12 @@
+---
+- name: generate domain
+  template:
+    src: domain.j2
+    dest: /tmp/domain
+    force: yes
+  delegate_to: 127.0.0.1
+
+- name: domain
+  script: /tmp/domain
+  args:
+    creates: '{{log}}domain'

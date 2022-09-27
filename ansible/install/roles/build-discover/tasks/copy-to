@@ -1,0 +1,3 @@
+sudo mv fdi-image-3.6.6.tar ~/
+cd ~
+tar xvf fdi-image-*.tar -C /var/lib/tftpboot/boot

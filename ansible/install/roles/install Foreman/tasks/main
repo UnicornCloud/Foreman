@@ -1,0 +1,5 @@
+---
+- import_tasks: template
+- import_tasks: install
+- import_tasks: setting
+- import_tasks: fix/discovery-grub2

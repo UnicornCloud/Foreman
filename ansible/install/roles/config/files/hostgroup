@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+
+my_password='unicorninc'  # Set from user's uni.net!
+
+name='default_bios'
+description='latest CentOS'
+subnet='local'
+domain='metal.ai'
+architecture='x86_64'
+os='CentOS 8'
+medium='CentOS 8 mirror'
+partition='Kickstart default'
+pxeloader='PXELinux BIOS'
+location='Default Location'
+organization='Default Organization'
+
+create(){
+  hammer hostgroup create \
+  --root-password "$my_password" \
+  --name "$name" \
+  --description "$description" \
+  --subnet "$subnet" \
+  --domain "$domain" \
+  --architecture "$architecture" \
+  --operatingsystem "$os" \
+  --medium "$medium" \
+  --partition-table "$partition" \
+  --pxe-loader "$pxeloader" \
+  --location "$location" \
+  --organization "$organization"
+
+  touch /etc/foreman/uni/log/hostgroup
+}
+
+create

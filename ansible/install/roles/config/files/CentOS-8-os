@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+os='CentOS'
+ver=8
+family='Redhat'
+arch='x86_64'
+media='CentOS 8 mirror'
+partition='Kickstart default'
+template='Kickstart default PXEGrub2 uni'
+
+create(){
+# 1 Create
+hammer os create \
+--name "$os" \
+--major "$ver" \
+--family "$family" \
+--architectures "$arch" \
+--media "$media" \
+--partition-tables "$partition"
+
+touch /etc/foreman/uni/log/$os-$ver-os
+}
+
+create

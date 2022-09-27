@@ -1,0 +1,20 @@
+# Faster Bac & restore using Backing_file
+dustymabe.com/2015/01/11/qemu-img-backing-files-a-poor-mans-snapshotrollback/
+
+# ansible move file
+medium.com/linux-academy/three-little-known-file-manipulation-tactics-in-ansible-c7253758bb16
+
+
+# Cloud modules in Ansible
+This pull request was never accepted, but '/cloud' fork looks great!
+github.com/toshywoshy/ansible/tree/ansible-modules-extras/pull/2556/lib/ansible/modules/cloud
+
+
+relation: qemu-img
+github.com/toshywoshy/ansible/tree/ansible-modules-extras/pull/2556/lib/ansible/modules/cloud/misc
+
+discuss:
+github.com/ansible/ansible/pull/21130
+
+guide:
+adam.younglogic.com/2019/01/remotely-provisioning-a-virtual-machine-using-ansible-and-libvirt/

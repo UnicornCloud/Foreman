@@ -1,0 +1,65 @@
+---
+- name: set up Firewall
+  block:
+  - name: DNS
+    firewalld:
+      service: dns
+      permanent: yes
+      state: enabled
+
+  - name: DHCP
+    firewalld:
+      port: 67-68/udp
+      permanent: yes
+      state: enabled
+
+  - name: TFTP
+    firewalld:
+      port: 69/udp
+      permanent: yes
+      state: enabled
+
+  - name: HTTP
+    firewalld:
+      port: 80/tcp
+      permanent: yes
+      state: enabled
+
+  - name: HTTPS
+    firewalld:
+      port: 443/tcp
+      permanent: yes
+      state: enabled
+
+  - name: HTTP access to Foreman web UI / provisioning template
+    firewalld:
+      port: 3000/tcp
+      permanent: yes
+      state: enabled
+
+  - name: Server VNC
+    firewalld:
+      port: 5910-5930/tcp
+      permanent: yes
+      state: enabled
+
+  - name: Separate PostgreSQL database [UniGraph]
+    firewalld:
+      port: 5432/tcp
+      permanent: yes
+      state: enabled
+
+  - name: Puppet Master
+    firewalld:
+      port: 8140/tcp
+      permanent: yes
+      state: enabled
+
+  - name: Smart Proxy
+    firewalld:
+      port: 8443/tcp
+      permanent: yes
+      state: enabled
+  become: true
+
+# Direct from: theforeman.org/manuals/2.1/index.html#3.1.5FirewallConfiguration
